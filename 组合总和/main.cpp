@@ -25,10 +25,11 @@ public:
         }
         if (target < 0)
             return;
+        // 
         for (int i = index; i < candidates.size(); ++i)
         {
             res.push_back(candidates[i]);
-            dfs(ans, res, candidates, target - candidates[i], i);
+            dfs(ans, res, candidates, target - candidates[i], i); // 不使用i+1，是为了可以重复使用当前的值
             res.pop_back();
         }
     }
